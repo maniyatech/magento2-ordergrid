@@ -1,0 +1,25 @@
+{
+    "name": "maniyatech/magento2-ordergrid",
+    "description": "Enhance Magento's native sales order grid with visual status indicators, configurable total summaries, and detailed product purchase visibility.",
+    "require": {
+        "maniyatech/module-core": "*"
+    },
+    "type": "magento2-module",
+    "license": "proprietary",
+    "version": "1.0.0",
+    "authors": [
+        {
+          "name": "ManiyaTech",
+          "email": "help.maniyatech@gmail.com",
+          "role": "Technical Support"
+        }
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "ManiyaTech\\OrderGrid\\": ""
+        }
+    }
+}

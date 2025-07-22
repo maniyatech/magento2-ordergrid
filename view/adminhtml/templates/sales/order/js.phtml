@@ -1,0 +1,13 @@
+<?php
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_OrderGrid
+ */
+
+/** @var $block \ManiyaTech\OrderGrid\Block\Adminhtml\Sales\Order\Js */
+?>
+<script>
+window.mtOrderGridConfig = <?= /* @noEscape */ json_encode($block->getGridConfig()); ?>;
+</script>

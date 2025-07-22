@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_OrderGrid
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="ordergrid" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <tab>maniyatech</tab>
+            <label>Enhanced Sales Order Grid</label>
+            <resource>ManiyaTech_OrderGrid::config_ordergrid</resource>
+            <group id="general" translate="label" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>General Settings</label>
+                <field id="ManiyaTech_OrderGrid" translate="label" type="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Composer Version</label>
+                    <frontend_model>ManiyaTech\Core\Block\Adminhtml\System\Config\Composer\Version</frontend_model>
+                </field>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="grid" translate="label" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                <label>Grid Settings</label>
+                <depends><field id="ordergrid/general/enabled">1</field></depends>
+                <field id="amount_display_text" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Sales Amount Text</label>
+                    <tooltip><![CDATA[<em>{{amount}}</em> will be replaced by total sales base amount of visible records.]]></tooltip>
+                </field>
+                <field id="amount_display_rounding" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable Price Rounding</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <tooltip><![CDATA[If enabled decimal precision will be removed from total amount.]]></tooltip>
+                </field>
+                <field id="visible_purchase_items" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Visible Purchase Items Column</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="status_color" translate="label" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Order Status Colors</label>
+                    <frontend_model>ManiyaTech\OrderGrid\Block\Adminhtml\System\Config\Form\Field\FieldArray\OrderStatusColor</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * ManiyaTech
+ *
+ * @author        Milan Maniya
+ * @package       ManiyaTech_OrderGrid
+ */
+-->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ManiyaTech_OrderGrid::main" title="Enhanced Sales Order Grid" translate="Enhanced Sales Order Grid" module="ManiyaTech_OrderGrid" parent="ManiyaTech_Core::core" sortOrder="100" resource="ManiyaTech_OrderGrid::main" dependsOnConfig="ordergrid/general/enabled"/>
+
+        <add id="ManiyaTech_OrderGrid::configuration_menu" title="Configurations" module="ManiyaTech_OrderGrid" parent="ManiyaTech_OrderGrid::main" sortOrder="10" action="admin/system_config/edit/section/ordergrid" resource="ManiyaTech_OrderGrid::configuration_menu" target="_blank"/>
+    </menu>
+</config>
